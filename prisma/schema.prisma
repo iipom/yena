@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["nativeTypes"]
+}
+
+model Guild {
+  id      String  @unique @db.VarChar(19)
+  premium Boolean @default(false)
+  prefix  String  @default(".") @db.VarChar(4)
+  left    Boolean @default(false)
+
+  //Roles
+  mute_role  String?  @db.VarChar(19)
+  join_roles String[] @db.VarChar(19)
+
+  //Channels
+  welcome_channel String? @db.VarChar(19)
+  log_channel     String? @db.VarChar(19)
+
+  //Messages
+  welcome_message String?
+}

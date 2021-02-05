@@ -1,0 +1,23 @@
+name: TypeScript
+on: [push, pull_request]
+jobs:
+  typescript:
+    name: TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Node v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install Yarn
+        run: npm i yarn -g
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run TypeScript Compiler
+        run: yarn run build

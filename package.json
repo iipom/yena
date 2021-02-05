@@ -1,0 +1,43 @@
+{
+    "name": "yena",
+    "version": "1.0.0",
+    "description": "Kitchen-sink Discord bot with a focus on music and moderation",
+    "main": "dist/index.js",
+    "author": "mopi",
+    "license": "MIT",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iipom/yena.git"
+    },
+    "bugs": {
+        "url": "https://github.com/iipom/yena/issues"
+    },
+    "homepage": "https://github.com/iipom/yena#readme",
+    "scripts": {
+        "format": "prettier --write src/",
+        "lint": "eslint src/",
+        "build": "tsc",
+        "start": "tsc && node ."
+    },
+    "dependencies": {
+        "@prisma/client": "2.16.0",
+        "discord-akairo": "^8.1.0",
+        "discord.js": "^12.5.1"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.22",
+        "@typescript-eslint/eslint-plugin": "4",
+        "dotenv": "^8.2.0",
+        "eslint": "7",
+        "eslint-config-prettier": "^7.2.0",
+        "eslint-config-standard-with-typescript": "^20.0.0",
+        "eslint-plugin-import": "2",
+        "eslint-plugin-node": "11",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-promise": "4",
+        "prettier": "^2.2.1",
+        "prisma": "2.16.0",
+        "typescript": "^4.1.3"
+    }
+}
